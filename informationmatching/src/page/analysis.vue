@@ -253,6 +253,7 @@
       },
       getBarData() {    //  获取json数据填充饼图
         this.$axios.get('../../static/mock/bar.json').then((res) => {
+          console.log(res);
           this.bar.data = [];
           this.bar.value = [];
           res.data.forEach((item, i) => {
@@ -269,6 +270,8 @@
               }
             ]
           })
+        }).catch((rej) => {
+
         });
       },
       getLineData() {

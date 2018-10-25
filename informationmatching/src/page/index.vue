@@ -15,6 +15,7 @@
         headers: [
           {prop: 'id', label: '餐馆ID'},
           {prop: 'name', label: '餐馆名称'},
+          {prop: 'discount', label: '实时折扣'},
           {prop: 'discount', label: '实时折扣'}
         ],
         rowData: [

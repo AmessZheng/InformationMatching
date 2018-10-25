@@ -1,5 +1,5 @@
 <template>
-
+  <div v-if="b">{{a}}</div>
 </template>
 
 <script>
@@ -7,13 +7,16 @@
 
   export default {
     data() {
-      return {}
+      return {
+        a: '1',
+        b: false
+      }
     },
     mounted() {
 
     },
     created() {
-
+      this.a = 2;
     },
     methods: {}
   }
