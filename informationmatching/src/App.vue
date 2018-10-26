@@ -1,11 +1,11 @@
 <template>
   <div id="app" style="width: 100%; min-height: 100%; height: 100%;">
-    <el-container style="height: 100%">
+    <el-container style="height: 100%" v-if="!isLogin">
       <el-header style="height: 80px;">Information Matching</el-header>
       <el-container>
         <el-aside width="200px">
           <el-menu :default-active="$route.path" :default-openeds="defaultOpen" router>
-            <el-menu-item :index="'/'">
+            <el-menu-item :index="'index'">
               <template slot="title"><i class="el-icon-menu"></i>首页</template>
             </el-menu-item>
             <el-menu-item :index="'analysis'">
@@ -20,6 +20,9 @@
         </el-container>
       </el-container>
     </el-container>
+    <div style="width:100%;height:100%" v-if="isLogin">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -31,6 +34,14 @@
     data() {
       return {
         defaultOpen: ['/'],
+        isLogin: false
+      }
+    },
+    created() {
+      if(this.$route.path === '/') {
+        this.isLogin = true;
+      } else {
+        this.isLogin = false;
       }
     }
   }
