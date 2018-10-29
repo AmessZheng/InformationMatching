@@ -52,7 +52,7 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+    /*text-align: center;*/
     color: #2c3e50;
     margin: 0;
   }
@@ -68,8 +68,8 @@
   }
   .el-main {
     color: #333;
-    text-align: center;
-    line-height: 160px;
+    /*text-align: center;*/
+    /*line-height: 160px;*/
   }
   .el-container:nth-child(5) .el-aside,
   .el-container:nth-child(6) .el-aside {
