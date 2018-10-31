@@ -43,6 +43,13 @@
       } else {
         this.isLogin = false;
       }
+    },
+    updated() {
+      if(this.$route.path === '/') {
+        this.isLogin = true;
+      } else {
+        this.isLogin = false;
+      }
     }
   }
 </script>
