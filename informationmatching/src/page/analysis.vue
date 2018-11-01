@@ -1,6 +1,8 @@
 <template>
   <div>
     <el-row type="flex" class="row-bg" justify="space-between" style="margin:20px 0">
+      <!--<a href="http://192.168.100.29:81/buudoo/user/dimension">点我跳转到布兜</a>-->
+      <a href="javascript: void(0)" @click.prevent="goBuudoo">点我跳转到布兜</a>
       <el-col style="background:#fff;box-shadow:3px 3px 8px #b6b6b6;width:48%;margin-right:1.2%">
         <div class="myChart-title">餐馆客流量占比率</div>
         <div id="myBar"></div>
@@ -65,6 +67,12 @@
 
     },
     methods: {
+      goBuudoo() {
+        // 当前窗口打开
+        window.location.href = 'http://192.168.100.29:81/buudoo/user/dimension';
+        // 在新窗口打开
+        // window.open('http://192.168.100.29:81/buudoo/user/dimension');
+      },
       drawBar(){    //  初始化饼图
         this.myBar = this.$echarts.init(document.getElementById('myBar'))
         this.myBar.setOption({
