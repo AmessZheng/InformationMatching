@@ -5,12 +5,15 @@
       <el-container>
         <el-aside width="200px">
           <el-menu :default-active="$route.path" :default-openeds="defaultOpen" router>
-            <el-menu-item :index="'index'">
+            <el-menu-item :index="'demo'">
               <template slot="title"><i class="el-icon-menu"></i>首页</template>
             </el-menu-item>
-            <el-menu-item :index="'analysis'">
-              <template slot="title"><i class="el-icon-menu"></i>分析</template>
+            <el-menu-item :index="'form'">
+              <template slot="title"><i class="el-icon-menu"></i>表单</template>
             </el-menu-item>
+            <!--<el-menu-item :index="'analysis'">
+              <template slot="title"><i class="el-icon-menu"></i>分析</template>
+            </el-menu-item>-->
           </el-menu>
         </el-aside>
         <el-container>

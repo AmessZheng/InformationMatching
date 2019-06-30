@@ -2,7 +2,7 @@
   <div class="login-bg">
     <div class="login-layer">
       <div class="login-box demo-input-suffix" @keyup.enter="submitLogin('loginForm')">
-        <div class="login-logo" style="margin-bottom:20px">Information Matching</div>
+        <div class="login-logo" style="margin-bottom:20px">Demo</div>
         <el-form ref="loginForm" :model="loginForm" :rules="rules" label-position="right" status-icon size="medium" label-width="0">
           <el-form-item prop="username">
             <el-input placeholder="请输入用户名" v-model="loginForm.username"></el-input>
@@ -56,13 +56,13 @@
         this.$refs[form].validate((valid) => {
           if(valid) {
             this.$router.push('/index');
-            /*this.$axios.post('/login/ajaxLogin', {userName: this.loginForm.username, password: this.loginForm.password}).then((res)=>{
+            this.$axios.post('/login', this.loginForm).then((res)=>{
               if(res.code === 0) {
                 this.$router.push('/index');
               } else {
                 this.$message.warning('登录失败');
               }
-            })*/
+            })
           } else {
             return false;
           }

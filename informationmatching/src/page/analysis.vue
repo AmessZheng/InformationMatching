@@ -1,8 +1,8 @@
 <template>
   <div>
-    <el-row type="flex" class="row-bg" justify="space-between" style="margin:20px 0">
+    <el-row type="flex" class="row-bg" justify="space-between" style="margin:20px 0;">
       <!--<a href="http://192.168.100.29:81/buudoo/user/dimension">点我跳转到布兜</a>-->
-      <a href="javascript: void(0)" @click.prevent="goBuudoo">点我跳转到布兜</a>
+      <!--<a href="javascript: void(0)" @click.prevent="goBuudoo">点我跳转到布兜</a>-->
       <el-col style="background:#fff;box-shadow:3px 3px 8px #b6b6b6;width:48%;margin-right:1.2%">
         <div class="myChart-title">餐馆客流量占比率</div>
         <div id="myBar"></div>
@@ -62,6 +62,12 @@
       this.getBarData();
       this.getLineData();
       this.getScatterData();
+      const _this = this;
+      window.onresize = function () {
+        _this.myBar.resize();
+        _this.myScatter.resize();
+        _this.myChart.resize();
+      }
     },
     created() {
 
@@ -116,7 +122,7 @@
               }
             }
           ]
-        })
+        });
       },
       drawLine() {
         this.myChart = this.$echarts.init(document.getElementById('myLine'));
